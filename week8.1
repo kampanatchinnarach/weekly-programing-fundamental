@@ -1,1 +1,27 @@
+#define _CRT_SECURE_NO_WARNING
+#include <stdio.h>
 
+struct Sec {
+	int H;
+	int M;
+	int s;
+	int sec1;
+}; Sec ss;
+
+int Hours(int i) {
+
+	ss.H = i / 3600;
+	ss.sec1 = i % 3600;
+	ss.M = ss.sec1 / 60;
+	ss.s = ss.sec1 % 60;
+	printf("%d:%d:%d", ss.H, ss.M, ss.s);
+	return 0;
+}
+
+
+int main() {
+	int x;
+	scanf_s("%d", &x);
+	Hours(x);
+	return 0;
+}
