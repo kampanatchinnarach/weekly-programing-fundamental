@@ -1,1 +1,60 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
+int araimairoo(char* checking, char c) {
+    for (int i = 0; i < strlen(checking); ++i) {
+        if (c == checking[i]) {
+            return i;
+        }
+    }
+    return -1;
+}
+void textTomorse(char* mos) {
+    char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const char* m[] = {
+            ".-",
+            "-...",
+            "-.-.",
+            "-..",
+            ".",
+            "..-.",
+            "--.",
+            "....",
+            "..",
+            ".---",
+            "-.-",
+            ".-..",
+            "--",
+            "-.",
+            "---",
+            ".--.",
+            "--.-",
+            ".-.",
+            "...",
+            "-",
+            "..-",
+            "...-",
+            ".--",
+            "-..-",
+            "-.--",
+            "--..",
+
+    };
+    for (int i = 0; i < strlen(mos); ++i) {
+        int pos = araimairoo(a, (char)toupper(mos[i]));
+        if (pos != -1) {
+
+            printf(" %s ", m[pos]);
+        }
+    }
+}
+
+int main() {
+    char morse[700];
+    printf("input A-Z :");
+    scanf("%s", morse);
+    textTomorse(morse);
+    return 0;
+}
