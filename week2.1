@@ -1,1 +1,28 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
 
+int main()
+{
+	int x, y;
+
+	printf("enter your number1:");
+	scanf("%d", &x);
+	printf("enter your number2:");
+	scanf("%d", &y);
+
+	if (x > y)
+	{
+		printf("%d-%d=%d", x, y, x - y);
+	}
+	else if(y > x)
+	{
+		printf("%d+%d=%d", y, x, y + x);
+	}
+	else if (y = x)
+	{
+		printf("%d*%d=%d", y, x, y * x);
+	}
+	
+
+		return 0;
+}
