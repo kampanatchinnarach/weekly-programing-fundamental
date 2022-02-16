@@ -25,3 +25,44 @@ int main() {
 	Hours(x);
 	return 0;
 }
+
+#define _CRT_SECURE_NO_WARNING
+#include <stdio.h>
+
+
+int hours(int h)
+{
+
+	h=h / 3600;
+	return h;
+}
+int minute(int m)
+{
+
+
+	int i=m ,v=0;
+	m = v;
+	v = i %3600;
+	m = v / 60;
+	return m;
+}
+int sec(int s) 
+{
+	int y = s, u=0;
+	s = u;
+	u = y % 3600;
+	s = u % 60;
+	return s;
+}
+int main()
+{
+	int x;
+	printf("enter sec");
+	scanf_s("%d", &x);
+	hours(x);
+	minute(x);
+	sec(x);
+
+	printf("%d:%d:%d", hours(x), minute(x), sec(x));
+	return 0;
+}
