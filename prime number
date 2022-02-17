@@ -1,0 +1,28 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<math.h>
+
+int isPrime(int);
+int main()
+{
+    int a;
+    printf("Input number : ");
+    scanf("%d", &a);
+
+    if (isPrime(a) == 1) printf("Prime Number");
+    else printf("Not Prime Number");
+    return 0;
+}
+int isPrime(int x)
+{
+    
+    if (x % 2 == 0 && x != 2) {
+        return 1;
+    }
+    else {
+        for (int y = 1; y < sqrt(x); y += 2) {
+            if (x % y == 0) {
+                return 0;
+            }
+        }
+}
